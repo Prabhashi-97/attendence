@@ -1,56 +1,63 @@
-<?php 
-    $title="Index";
-    require_once 'includes/header.php';
-    require_once 'db/conn.php';
+<?php
+    $title = 'Index'; 
 
-    $result=$crud->getSpecialities();
+    require_once 'includes/header.php'; 
+    require_once 'db/conn.php'; 
+
+    $results = $crud->getSpecialities();
+
 ?>
-    <h1 class="text-center">Registration for IT Conference</h1>
+    
+    <h1 class="text-center">Registration for IT Conference </h1>
 
-
-    <form method="post" action=success.php>
-    <div class="form-group">
-        <label for="exampleInputFirstname">First Name</label>
-        <input required type="text" class="form-control" id="exampleInputFirstname" name="firstname">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputLastname">Last Name</label>
-        <input required type="text" class="form-control" id="exampleInputLastname" name="lastname">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputDOB">Date Of Birth</label>
-        <input type="text" class="form-control" id="exampleInputDOB" name="dob">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputSpeciality" class="form-label">Area of Expertise</label>
-        <select class="form-select" aria-label="Default select example" id="exampleInputSpeciality" name="speciality">
-            <?php while($r=$result->fetch(PDO::FETCH_ASSOC)){?>
-            <option value=<?php echo $r['speciality_id']?>><?php echo $r['name']?></option>
-            <?php }?>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" >
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPH" class="form-label">Contact Number</label>
-        <input type="text" class="form-control" id="exampleInputPH" aria-describedby="phoneHelp" name="phone">
-        <div id="phonelHelp" class="form-text">We'll never share your contact number with anyone else.</div>
-    </div>
-    <br>
-    <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-        <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-    </div>
-    <button type="submit"  class="btn btn-primary col-12" name="submit">Submit</button>
+    <form method="post" action="success.php" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="exampleInputFirstName">First Name</label>
+            <input required type="text" class="form-control" id="exampleInputFirstName" name="firstname">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputLastName">Last Name</label>
+            <input required type="text" class="form-control" id="exampleInputLastName" name="lastname">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputDOB">Date Of Birth</label>
+            <input type="text" class="form-control" id="exampleInputDOB" name="dob">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputSpeciality">Area of Expertise</label>
+            <select class="form-control" id="exampleInputSpeciality" name="speciality">
+                <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
+                   <option value="<?php echo $r['speciality_id'] ?>"><?php echo $r['name']; ?></option>
+                <?php }?>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input required type="email" class="form-control" id="exampleInputEmail1"  name="email" aria-describedby="emailHelp" >
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <br>
+        <div class="form-groupform-group">
+            <label for="exampleInputPH">Contact Number</label>
+            <input type="text" class="form-control" id="exampleInputPH" name="phone" aria-describedby="phoneHelp" >
+            <small id="phoneHelp" class="form-text text-muted">We'll never share your number with anyone else.</small>
+        </div>
+        <br>
+            <div class="input-group mb-3">
+            <input type="file" accept="image/*"class="form-control" id="inputGroupFile02" name="avatar">
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        </div>
+        
+        
+        <button type="submit" name="submit" class="btn btn-primary col-12">Submit</button>
     </form>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php require_once 'includes/footer.php'; ?>

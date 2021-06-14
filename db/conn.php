@@ -5,11 +5,11 @@
     // $pass='';
     // $charset='utf8mb4';
 
-    //remote connection
+   // remote connection
     $host='remotemysql.com';
-    $db='nWNG8eoI5t';
-    $user='nWNG8eoI5t';
-    $pass='chOKzmMKWz';
+    $db='7eMpJeH7or';
+    $user='7eMpJeH7or';
+    $pass='DaLkORqtU6';
     $charset='utf8mb4';
 
     $dsn="mysql:host=$host;dbname=$db;charset=$charset";
