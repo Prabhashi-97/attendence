@@ -9,17 +9,17 @@
 
 
     <form method="post" action=success.php>
-    <div class="mb-3">
-        <label for="exampleInputFirstName" class="form-label">First Name</label>
-        <input required type="text" class="form-control" id="exampleInputFirstName" name="firstname" >
+    <div class="form-group">
+        <label for="exampleInputFirstname">First Name</label>
+        <input required type="text" class="form-control" id="exampleInputFirstname" name="firstname">
     </div>
-    <div class="mb-3">
-        <label for="exampleInputLastName" class="form-label">Last Name</label>
-        <input required type="text" class="form-control" id="exampleInputLastName" name="lastname">
+    <div class="form-group">
+        <label for="exampleInputLastname">Last Name</label>
+        <input required type="text" class="form-control" id="exampleInputLastname" name="lastname">
     </div>
-    <div class="mb-3">
-        <label for="exampleInputDOB" class="form-label">Date of Birth</label>
-        <input  type="text" class="form-control" id="exampleInputDOB" name="dob">
+    <div class="form-group">
+        <label for="exampleInputDOB">Date Of Birth</label>
+        <input type="text" class="form-control" id="exampleInputDOB" name="dob">
     </div>
     <div class="mb-3">
         <label for="exampleInputSpeciality" class="form-label">Area of Expertise</label>
@@ -38,6 +38,11 @@
         <label for="exampleInputPH" class="form-label">Contact Number</label>
         <input type="text" class="form-control" id="exampleInputPH" aria-describedby="phoneHelp" name="phone">
         <div id="phonelHelp" class="form-text">We'll never share your contact number with anyone else.</div>
+    </div>
+    <br>
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+        <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
     </div>
     <button type="submit"  class="btn btn-primary col-12" name="submit">Submit</button>
     </form>

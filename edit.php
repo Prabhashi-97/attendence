@@ -1,6 +1,7 @@
 <?php 
     $title="Edit Recors";
     require_once 'includes/header.php';
+    include_once 'includes/auth_check.php';
     require_once 'db/conn.php';
 
     $result=$crud->getSpecialities();
